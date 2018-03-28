@@ -1,6 +1,7 @@
 # GrapgQl-Core
 
 ##Mutation to create order
+```
 
 mutation createOrder($order: OrderInput!) {
   createOrder(order: $order) {
@@ -10,9 +11,10 @@ mutation createOrder($order: OrderInput!) {
     created
   }
 }
+```
+
 ##mutation to start order
-
-
+```
 mutation startOrder($id:String!)
 {
   startOrder(orderId:$id)
@@ -22,9 +24,10 @@ mutation startOrder($id:String!)
   name
  }
 }
+```
 ##query to getorder
 
-
+```
 query getOrder {
   
   orders{
@@ -39,9 +42,10 @@ query getOrder {
     created
   }
 }
+
+```
 ##variables
-
-
+```
 {
    "order":{
         "name": "test order2",
@@ -51,9 +55,9 @@ query getOrder {
   },
    "id": "b32493c7-3202-4375-852b-f468630ee5bd"
 }
+```
 ##subscription1
-
-
+```
 subscription{
   orderEvent(statuses:[CREATED])
     {
@@ -62,8 +66,9 @@ subscription{
       status
     }
 }
+```
 ##subscription2
-
+```
 
 subscription{
   orderEvent(statuses:[PROCESSING])
@@ -73,3 +78,4 @@ subscription{
       status
     }
 }
+```
